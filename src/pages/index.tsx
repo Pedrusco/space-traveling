@@ -1,17 +1,17 @@
+import { useState } from 'react';
 import { GetStaticProps } from 'next';
-import Link from 'next/link';
-import Header from '../components/Header';
+import { getPrismicClient } from '../services/prismic';
+import { ptBR } from 'date-fns/locale';
+import { format } from 'date-fns';
 import { FiCalendar, FiUser } from 'react-icons/fi';
 
-import { getPrismicClient } from '../services/prismic';
+import Head from 'next/head';
+import Link from 'next/link';
+import Header from '../components/Header';
 import Prismic from '@prismicio/client';
 
-import commonStyles from '../styles/common.module.scss';
 import styles from './home.module.scss';
-import { useState } from 'react';
-import { format } from 'date-fns';
-import { ptBR } from 'date-fns/locale';
-import Head from 'next/head';
+import commonStyles from '../styles/common.module.scss';
 
 
 interface Post {
